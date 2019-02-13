@@ -1,0 +1,82 @@
+.clear{
+	clear: both;
+}
+.fenleiBox {
+    padding: 10px 0;
+    border-top: 2px solid #999;
+    border-bottom: 1px solid #dee2e6;
+    line-height: 28px;
+	font-size: 18px;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+	width: 800px;
+	margin-top: 20px;
+	margin-bottom: 14px;
+}
+
+.fenleiBox > .cname{
+	position: relative;
+    top: 1px;
+    padding-right: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+.list{
+	width: 800px;
+}
+.list>.item{
+	padding: 20px 0;
+	border-bottom: 1px solid #e6e6e6;
+
+}
+.list>.item .picture{
+	width: 220px;
+	height: 145px;
+	float: left;
+	overflow: hidden;
+}
+.list>.item img{
+	width: 220px;
+	height: 145px;
+	transition:transform 1s;
+}
+.list>.item img:hover{
+	transform: scale(1.1,1.1);
+}
+.detail{
+	width: 576px;
+	height: 145px;
+	float: right;
+	padding-left: 12px;
+	position: relative;
+}
+.detail>a:hover{
+	color: #2291f7;
+}
+.detail>h3{
+	margin-top: 8px;
+	font-size: 22px;
+    font-weight: 400;
+}
+.sourceAndtime{
+	position: absolute;
+	bottom: 10px;
+	font-size: 12px;
+}
+.source{
+	color: #666;
+	padding-right: 8px;
+}
+.source:hover{
+	color: #666;
+}
+.list>.item:hover{
+	background-color: #f3f6f8;
+}
+
+
+
+

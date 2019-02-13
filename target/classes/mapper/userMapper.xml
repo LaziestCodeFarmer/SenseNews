@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.xtl.mapper.userMapper">
+    <insert id="adduserAccount">
+        insert into userAccount(account,password,supperPassword)
+        values
+        (#{account},#{password},#{supperPassword})
+    </insert>
+
+    <insert id="adduserMessage">
+        insert into userMessage(userName)
+        values
+        (#{userName})
+    </insert>
+
+
+    <select id="login" resultType="Integer">
+        select uId from userAccount
+        <where>
+            account=#{account}
+            and
+            password=#{password}
+        </where>
+    </select>
+
+    <select id="getUserMessage" resultType="userMessage">
+        select * from userMessage
+        where
+        uId=#{uId}
+    </select>
+
+</mapper>
