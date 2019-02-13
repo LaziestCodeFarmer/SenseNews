@@ -27,7 +27,9 @@
         sadsad
     </div>
     <script>
-
+        document.getElementById('aaa').onclick=function(){
+            alert('你好');
+        }
     </script>
 </body>
 </html>

@@ -16,7 +16,6 @@
     <script language="javascript" type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script language="javascript" type="text/javascript" src="js/main.js"></script>
     <script language="javascript" type="text/javascript" src="js/popwin.js"></script>
-    <script language="javascript" type="text/javascript" src="js/login.js"></script>
     <link rel="stylesheet" type="text/css" href="css/nanoscroller.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
@@ -180,9 +179,17 @@
             <c:if test="${userMessage!=null}">
                 <li id="showUserName">${userMessage.userName}</li>
                 <ul id="showAndOut">
-                    <li>个人信息</li>
-                    <li>注销</li>
+                    <a href=""><li>个人信息</li></a>
+                    <a href=""><li>注销</li></a>
                 </ul>
+                <script>
+                    document.getElementById('showUserName').onmouseover=function(){
+                        document.getElementById('showAndOut').style.display="block";
+                    }
+                    document.getElementById('showAndOut').onblur=function(){
+                        this.style.display="none";
+                    }
+                </script>
             </c:if>
             <li><a class="cd-tougao">投稿</a></li>
         </ul>
