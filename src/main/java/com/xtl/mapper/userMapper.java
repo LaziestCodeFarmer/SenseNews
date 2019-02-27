@@ -1,5 +1,6 @@
 package com.xtl.mapper;
 
+import com.xtl.pojo.article;
 import com.xtl.pojo.userMessage;
 import org.apache.ibatis.annotations.Param;
 
@@ -21,6 +22,8 @@ public interface userMapper {
 
     //获取账号的个人信息
     public userMessage getUserMessage(@Param("uId") int uId);
+
+
 
 
 }

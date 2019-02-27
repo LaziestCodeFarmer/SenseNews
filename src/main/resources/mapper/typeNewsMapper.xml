@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.xtl.mapper.typeNewsMapper">
+
+    <select id="searchNewsByType" resultType="article">
+      select * from article where type = #{type} order by dataTime desc LIMIT #{n},#{m};
+    </select>
+
+</mapper>

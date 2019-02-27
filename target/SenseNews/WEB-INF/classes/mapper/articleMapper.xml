@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.xtl.mapper.articleMapper">
+
+    <select id="getArticleByAid" resultType="article">
+        select * from article where aId = #{aId};
+    </select>
+
+    <select id="getarticleStatusByAid" resultType="articleStatus">
+        select * from articleStatus where aId = #{aId};
+    </select>
+    <select id="getuserMessageByAuthor" resultType="userMessage">
+        select * from userMessage where userName = #{author};
+    </select>
+    <select id="getnewSumByAuthor" resultType="Integer">
+        SELECT COUNT(aId) FROM article WHERE author = #{author};
+    </select>
+    <select id="getLastArticleByAuthor" resultType="article">
+        SELECT * FROM article WHERE author = #{author} order by dataTime asc limit 1;
+    </select>
+    <select id="getuIdByUserName" resultType="Integer">
+        select uId from userMessage where userName=#{userName};
+    </select>
+    <select id="IsCollect" resultType="Integer">
+        SELECT collected FROM articleEvaluate WHERE aId=#{aId} and uId=#{uId};
+    </select>
+
+
+
+
+
+
+    <select id="IsExist" resultType="Boolean">
+        select * from articleEvaluate where uId=#{uId} and aId=#{aId};
+    </select>
+    <insert id="setCollected">
+        insert into articleEvaluate(uId,aId,collected) values(#{uId}, #{aId},1)
+    </insert>
+    <update id="updateCollected">
+        update articleEvaluate SET collected=1 where uId=#{uId} and aId=#{aId}
+    </update>
+
+
+    <select id="IsExist2" resultType="Boolean">
+        select * from articleStatus where aId=#{aId};
+    </select>
+    <insert id="setStatus">
+        insert into articleStatus(aId,collected) values(#{aId},1)
+    </insert>
+    <update id="updateStatus">
+        update articleStatus SET collected=collected+1 where aId=#{aId}
+    </update>
+
+
+    <update id="backCollectEvaluate">
+        update articleEvaluate SET collected=0 where uId=#{uId} and aId=#{aId}
+    </update>
+    <update id="backCollectStatus" >
+        update articleStatus SET collected=collected-1 where aId=#{aId}
+    </update>
+
+    
+    
+    <select id="searchNewsByAuthor" resultType="article">
+        select * from article where author = #{author} order by dataTime desc LIMIT #{n},#{m};
+    </select>
+    
+</mapper>

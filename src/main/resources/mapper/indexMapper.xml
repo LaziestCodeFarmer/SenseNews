@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.xtl.mapper.indexMapper">
+
+    <select id="getArticle" resultType="article">
+        select * from article
+        <if test="type==null">
+            order by dataTime DESC,click DESC limit 3
+        </if>
+        <if test="type!=null">
+            where type=#{type} order by dataTime DESC,click DESC limit 2
+        </if>
+    </select>
+
+</mapper>

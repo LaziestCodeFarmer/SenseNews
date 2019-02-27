@@ -81,13 +81,12 @@
         </div>
         <!-- 列表 -->
         <ul class="nav navbar-nav navbar-left" id="jsddm">
-            <li class="nav-news"><a href="#" target="_blank">推荐<span class="nums-prompt nums-prompt-topic"></span></a></li>
-            <li class="nav-news"><a href="#" target="_blank">大数据</a></li>
-            <li class="nav-news"><a href="#" target="_blank">科技<span class="nums-prompt"></span></a></li>
-            <li class="nav-news"><a href="#" target="_blank">财经<em class="nums-prompt"></em></a></li>
-            <li class="nav-news"><a href="#" target="_blank">国际</a></li>
-            <li class="nav-news"><a href="#" target="_blank">军事</a></li>
-            <li class="nav-news"><a href="#" target="_blank">娱乐</a></li>
+            <li class="nav-news"><a href="./" target="_blank">推荐<span class="nums-prompt nums-prompt-topic"></span></a></li>
+            <li class="nav-news"><a href="./typeNews?type=tech" target="_parent">科技<span class="nums-prompt"></span></a></li>
+            <li class="nav-news"><a href="./typeNews?type=finance" target="_parent">财经<em class="nums-prompt"></em></a></li>
+            <li class="nav-news"><a href="./typeNews?type=world" target="_parent">国际</a></li>
+            <li class="nav-news"><a href="./typeNews?type=mil" target="_parent">军事</a></li>
+            <li class="nav-news"><a href="./typeNews?type=ent" target="_parent">娱乐</a></li>
         </ul>
         <!-- 登入注册 -->
         <ul class="nav navbar-nav navbar-right transition  xiala main_nav">
@@ -180,13 +179,13 @@
                 <li id="showUserName">${userMessage.userName}</li>
                 <ul id="showAndOut">
                     <a href=""><li>个人信息</li></a>
-                    <a href=""><li>注销</li></a>
+                    <a href="./loginOut"><li>注销</li></a>
                 </ul>
                 <script>
                     document.getElementById('showUserName').onmouseover=function(){
                         document.getElementById('showAndOut').style.display="block";
                     }
-                    document.getElementById('showAndOut').onblur=function(){
+                    document.getElementById('showAndOut').onmouseout=function(){
                         this.style.display="none";
                     }
                 </script>

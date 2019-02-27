@@ -1,7 +1,10 @@
 package com.xtl.controller;
 
+import com.xtl.dao.indexDao;
 import com.xtl.mapper.userMapper;
+import com.xtl.pojo.article;
 import com.xtl.pojo.userMessage;
+import com.xtl.service.indexService;
 import com.xtl.service.userService;
 import com.xtl.utils.MD5;
 import com.xtl.utils.mybatisUtils;
@@ -29,7 +32,8 @@ public class userController {
 
     @Autowired
     userService userservice;
-
+    @Autowired
+    indexService indexservice;
 
     @RequestMapping("/aaa")
     public String aaa(){
@@ -39,7 +43,7 @@ public class userController {
 
     //首页
     @RequestMapping("/")
-    public String index(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public String index(HttpServletRequest request, HttpServletResponse response,Model model) throws Exception {
 
         //2.Cookie自动登录操作
         Cookie[] cookies = request.getCookies();
@@ -64,6 +68,21 @@ public class userController {
                 }
             }
         }
+
+        //首页新闻展览数据
+        //数据有：推荐、科技(tech)、财经(finance)、国际(world)、军事(mil)、娱乐(ent)
+        article[] recommends = indexservice.getArticle(null);
+        article[] techs = indexservice.getArticle("tech");
+        article[] finances = indexservice.getArticle("finance");
+        article[] worlds = indexservice.getArticle("world");
+        article[] mils = indexservice.getArticle("mil");
+        article[] ents = indexservice.getArticle("ent");
+        model.addAttribute("recommends",recommends);
+        model.addAttribute("techs",techs);
+        model.addAttribute("finances",finances);
+        model.addAttribute("worlds",worlds);
+        model.addAttribute("mils",mils);
+        model.addAttribute("ents",ents);
         return "index";
     }
 
@@ -87,7 +106,7 @@ public class userController {
         }
         //失败
         else{
-
+            System.out.println("注册失败");
         }
 
         //注册成功后，转发到login模块
@@ -97,7 +116,7 @@ public class userController {
 
     }
 
-    //用户登入
+    //用户登录
     @RequestMapping("/login")
     public void login(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
@@ -137,7 +156,31 @@ public class userController {
             request.getRequestDispatcher("/").forward(request,response);
             return;
         }
+    }
+    //用户注销
+    @RequestMapping("/loginOut")
+    public void loginOut(HttpServletRequest request,HttpServletResponse response) throws Exception{
+        System.out.println("正在注销");
+        //注销session会话，同时检测是否保存了账号密码cookie,有的话进行删除，
+        HttpSession session = request.getSession();
+        session.setAttribute("userMessage",null);
 
+        Cookie[] cookies = request.getCookies();
+        if(cookies!=null){
+            for(Cookie cookie : cookies){
+                if(cookie.getName().equals("account")){
+                    cookie.setPath("/");
+                    cookie.setMaxAge(0);
+                    response.addCookie(cookie);
+                }
+                if(cookie.getName().equals("password")){
+                    cookie.setPath("/");
+                    cookie.setMaxAge(0);
+                    response.addCookie(cookie);
+                }
+            }
+        }
+        request.getRequestDispatcher("/").forward(request,response);
     }
 }
 

@@ -2,6 +2,7 @@ package com.xtl.dao;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.xtl.mapper.userMapper;
+import com.xtl.pojo.article;
 import com.xtl.pojo.userMessage;
 import com.xtl.utils.mybatisUtils;
 import org.apache.ibatis.annotations.Param;
@@ -34,5 +35,6 @@ public class userDao {
     public userMessage getUserMessage(int uId){
         return mapper.getUserMessage(uId);
     }
+
 
 }

@@ -5,89 +5,46 @@
 <%@include file="header.jsp"%>
 <body>
 <!-- 主体 -->
+
 <div class="placeholder-height"></div>
 <div class="container" id="index">
     <div class="wrap-left pull-left">
         <!-- 今日要闻 -->
         <div class="big-pic-box">
             <div class="big-pic">
-                <a href="#" target="_blank" class="transition" title="醒醒吧，腾讯、网易称霸的游戏行业，谁都没机会成为第三">
-                    <div class="back-img"><img src="sy-img/061708387437.jpg"  alt="醒醒吧，腾讯、网易称霸的游戏行业，谁都没机会成为第三"></div>
+                <a href="./article?aId=${recommends[0].aId}"  class="transition" >
+                    <div class="back-img"><img src="${recommends[0].imgUrl}"  alt="${recommends[0].title}"></div>
                     <div class="big-pic-content">
-                        <h1 class="t-h1">醒醒吧，腾讯、网易称霸的游戏行业，谁都没机会成为第三</h1>
+                        <h1 class="t-h1">${recommends[0].title}</h1>
                     </div>
                 </a>
             </div>
+
             <div class="big2-pic big2-pic-index big2-pic-index-top">
-                <a href="#" class="back-img transition" target="_blank" title="嘘！Facebook 正在上海悄悄寻找办公室">
-                    <img class="lazy" src="sy-img/142618969973.jpg" alt="嘘！Facebook 正在上海悄悄寻找办公室">
+                <a href="./article?aId=${recommends[1].aId}" class="back-img transition">
+                    <img class="lazy" src="${recommends[1].imgUrl}" alt="${recommends[1].title}">
                 </a>
-                <a href="#" target="_blank" title="嘘！Facebook 正在上海悄悄寻找办公室">
+                <a href="./article?aId=${recommends[1].aId}" title="${recommends[1].title}">
                     <div class="big2-pic-content">
-                        <h2 class="t-h1">嘘！Facebook 正在上海悄悄寻找办公室</h2>
+                        <h2 class="t-h1">${recommends[1].title}</h2>
                     </div>
                 </a>
             </div>
             <div class="big2-pic big2-pic-index big2-pic-index-bottom">
-                <a href="#" class="back-img transition" target="_blank" title="马云在人生最艰难时去了延安，在革命根据地决定建立淘宝">
-                    <img class="lazy" src="sy-img/093433055013.jpg" alt="马云在人生最艰难时去了延安，在革命根据地决定建立淘宝">
+                <a href="./article?aId=${recommends[2].aId}" class="back-img transition">
+                    <img class="lazy" src="${recommends[2].imgUrl}" alt="${recommends[2].title}">
                 </a>
-                <a href="#" target="_blank" 马云在人生最艰难时去了延安，在革命根据地决定建立淘宝>
+                <a href="./article?aId=${recommends[2].aId}" title="${recommends[2].title}">
                     <div class="big2-pic-content">
-                        <h2 class="t-h1">马云在人生最艰难时去了延安，在革命根据地决定建立淘宝</h2>
+                        <h2 class="t-h1">${recommends[2].title}</h2>
                     </div>
                 </a>
             </div>
         </div>
 
 
-        <!-- 分类热议 -->
+        <!-- 分类 -->
         <div class="mod-info-flow">
-            <div class="fenleiBox">
-                <a href="" target="_blank">推荐</a>
-                <span class="cname">China</span>
-            </div>
-            <ul class="list">
-                <li class="item">
-                    <!-- 左图 -->
-                    <div class="picture">
-                        <a href="./" target="_blank"><img alt="***" src="./images/58_avatar_big.jpg"></a>
-                    </div>
-                    <!-- 又主体和作者，时间和分享 -->
-                    <div class="detail">
-                        <h3><a href="./" target="_blank">中俄干涉津巴布韦选举？津总统：很惊讶英美法没遭指控</a></h3>
-                        <div class="sourceAndtime">
-                            <a class="source" target="_blank" href="./" >重案组37号</a>
-                            <span class="time">1小时前</span>
-                        </div>
-                    </div>
-                    <!-- 清除浮动 -->
-                    <div class="clear"></div>
-                </li>
-            </ul>
-
-            <div class="fenleiBox">
-                <a href="" target="_blank">互联网</a>
-                <span class="cname">China</span>
-            </div>
-            <ul class="list">
-                <li class="item">
-                    <!-- 左图 -->
-                    <div class="picture">
-                        <a href="./" target="_blank"><img alt="***" src="./images/58_avatar_big.jpg"></a>
-                    </div>
-                    <!-- 又主体和作者，时间和分享 -->
-                    <div class="detail">
-                        <h3><a href="./" target="_blank">中俄干涉津巴布韦选举？津总统：很惊讶英美法没遭指控</a></h3>
-                        <div class="sourceAndtime">
-                            <a class="source" target="_blank" href="./" >重案组37号</a>
-                            <span class="time">1小时前</span>
-                        </div>
-                    </div>
-                    <!-- 清除浮动 -->
-                    <div class="clear"></div>
-                </li>
-            </ul>
 
 
             <div class="fenleiBox">
@@ -95,22 +52,24 @@
                 <span class="cname">China</span>
             </div>
             <ul class="list">
-                <li class="item">
-                    <!-- 左图 -->
-                    <div class="picture">
-                        <a href="./" target="_blank"><img alt="***" src="./images/58_avatar_big.jpg"></a>
-                    </div>
-                    <!-- 又主体和作者，时间和分享 -->
-                    <div class="detail">
-                        <h3><a href="./" target="_blank">中俄干涉津巴布韦选举？津总统：很惊讶英美法没遭指控</a></h3>
-                        <div class="sourceAndtime">
-                            <a class="source" target="_blank" href="./" >重案组37号</a>
-                            <span class="time">1小时前</span>
+                <c:forEach var="tech" items="${techs}">
+                    <li class="item">
+                        <!-- 左图 -->
+                        <div class="picture">
+                            <a href="./article?aId=${tech.aId}"><img alt="${tech.title}" src="${tech.imgUrl}"></a>
                         </div>
-                    </div>
-                    <!-- 清除浮动 -->
-                    <div class="clear"></div>
-                </li>
+                        <!-- 又主体和作者，时间和分享 -->
+                        <div class="detail">
+                            <h3><a href="./article?aId=${tech.aId}">${tech.title}</a></h3>
+                            <div class="sourceAndtime">
+                                <a class="source" target="_blank" href="${tech.authorUrl}" >${tech.author}</a>
+                                <span class="time">${tech.indexTimeShow}</span>
+                            </div>
+                        </div>
+                        <!-- 清除浮动 -->
+                        <div class="clear"></div>
+                    </li>
+                </c:forEach>
             </ul>
 
 
@@ -119,22 +78,24 @@
                 <span class="cname">China</span>
             </div>
             <ul class="list">
-                <li class="item">
-                    <!-- 左图 -->
-                    <div class="picture">
-                        <a href="./" target="_blank"><img alt="***" src="./images/58_avatar_big.jpg"></a>
-                    </div>
-                    <!-- 又主体和作者，时间和分享 -->
-                    <div class="detail">
-                        <h3><a href="./" target="_blank">中俄干涉津巴布韦选举？津总统：很惊讶英美法没遭指控</a></h3>
-                        <div class="sourceAndtime">
-                            <a class="source" target="_blank" href="./" >重案组37号</a>
-                            <span class="time">1小时前</span>
+                <c:forEach var="finance" items="${finances}">
+                    <li class="item">
+                        <!-- 左图 -->
+                        <div class="picture">
+                            <a href="./article?aId=${finance.aId}"><img alt="${finance.title}" src="${finance.imgUrl}"></a>
                         </div>
-                    </div>
-                    <!-- 清除浮动 -->
-                    <div class="clear"></div>
-                </li>
+                        <!-- 又主体和作者，时间和分享 -->
+                        <div class="detail">
+                            <h3><a href="./article?aId=${finance.aId}">${finance.title}</a></h3>
+                            <div class="sourceAndtime">
+                                <a class="source" target="_blank" href="${finance.authorUrl}" >${finance.author}</a>
+                                <span class="time">${finance.indexTimeShow}</span>
+                            </div>
+                        </div>
+                        <!-- 清除浮动 -->
+                        <div class="clear"></div>
+                    </li>
+                </c:forEach>
             </ul>
 
 
@@ -143,22 +104,24 @@
                 <span class="cname">China</span>
             </div>
             <ul class="list">
-                <li class="item">
-                    <!-- 左图 -->
-                    <div class="picture">
-                        <a href="./" target="_blank"><img alt="***" src="./images/58_avatar_big.jpg"></a>
-                    </div>
-                    <!-- 又主体和作者，时间和分享 -->
-                    <div class="detail">
-                        <h3><a href="./" target="_blank">中俄干涉津巴布韦选举？津总统：很惊讶英美法没遭指控</a></h3>
-                        <div class="sourceAndtime">
-                            <a class="source" target="_blank" href="./" >重案组37号</a>
-                            <span class="time">1小时前</span>
+                <c:forEach var="world" items="${worlds}">
+                    <li class="item">
+                        <!-- 左图 -->
+                        <div class="picture">
+                            <a href="./article?aId=${world.aId}" ><img alt="${world.title}" src="${world.imgUrl}"></a>
                         </div>
-                    </div>
-                    <!-- 清除浮动 -->
-                    <div class="clear"></div>
-                </li>
+                        <!-- 又主体和作者，时间和分享 -->
+                        <div class="detail">
+                            <h3><a href="./article?aId=${world.aId}" >${world.title}</a></h3>
+                            <div class="sourceAndtime">
+                                <a class="source" target="_blank" href="${world.authorUrl}" >${world.author}</a>
+                                <span class="time">${world.indexTimeShow}</span>
+                            </div>
+                        </div>
+                        <!-- 清除浮动 -->
+                        <div class="clear"></div>
+                    </li>
+                </c:forEach>
             </ul>
 
 
@@ -167,22 +130,24 @@
                 <span class="cname">China</span>
             </div>
             <ul class="list">
-                <li class="item">
-                    <!-- 左图 -->
-                    <div class="picture">
-                        <a href="./" target="_blank"><img alt="***" src="./images/58_avatar_big.jpg"></a>
-                    </div>
-                    <!-- 又主体和作者，时间和分享 -->
-                    <div class="detail">
-                        <h3><a href="./" target="_blank">中俄干涉津巴布韦选举？津总统：很惊讶英美法没遭指控</a></h3>
-                        <div class="sourceAndtime">
-                            <a class="source" target="_blank" href="./" >重案组37号</a>
-                            <span class="time">1小时前</span>
+                <c:forEach var="mil" items="${mils}">
+                    <li class="item">
+                        <!-- 左图 -->
+                        <div class="picture">
+                            <a href="./article?aId=${mil.aId}"><img alt="${mil.title}" src="${mil.imgUrl}"></a>
                         </div>
-                    </div>
-                    <!-- 清除浮动 -->
-                    <div class="clear"></div>
-                </li>
+                        <!-- 又主体和作者，时间和分享 -->
+                        <div class="detail">
+                            <h3><a href="./article?aId=${mil.aId}">${mil.title}</a></h3>
+                            <div class="sourceAndtime">
+                                <a class="source" target="_blank" href="${mil.authorUrl}" >${mil.author}</a>
+                                <span class="time">${mil.indexTimeShow}</span>
+                            </div>
+                        </div>
+                        <!-- 清除浮动 -->
+                        <div class="clear"></div>
+                    </li>
+                </c:forEach>
             </ul>
 
 
@@ -191,27 +156,26 @@
                 <span class="cname">China</span>
             </div>
             <ul class="list">
-                <li class="item">
-                    <!-- 左图 -->
-                    <div class="picture">
-                        <a href="./" target="_blank"><img alt="***" src="./images/58_avatar_big.jpg"></a>
-                    </div>
-                    <!-- 又主体和作者，时间和分享 -->
-                    <div class="detail">
-                        <h3><a href="./" target="_blank">中俄干涉津巴布韦选举？津总统：很惊讶英美法没遭指控</a></h3>
-                        <div class="sourceAndtime">
-                            <a class="source" target="_blank" href="./" >重案组37号</a>
-                            <span class="time">1小时前</span>
+                <c:forEach var="ent" items="${ents}">
+                    <li class="item">
+                        <!-- 左图 -->
+                        <div class="picture">
+                            <a href="./article?aId=${ent.aId}" ><img alt="${ent.title}" src="${ent.imgUrl}"></a>
                         </div>
-                    </div>
-                    <!-- 清除浮动 -->
-                    <div class="clear"></div>
-                </li>
+                        <!-- 又主体和作者，时间和分享 -->
+                        <div class="detail">
+                            <h3><a href="./article?aId=${ent.aId}">${ent.title}</a></h3>
+                            <div class="sourceAndtime">
+                                <a class="source" target="_blank" href="${ent.authorUrl}" >${ent.author}</a>
+                                <span class="time">${ent.indexTimeShow}</span>
+                            </div>
+                        </div>
+                        <!-- 清除浮动 -->
+                        <div class="clear"></div>
+                    </li>
+                </c:forEach>
             </ul>
 
-        </div>
-        <div class="get-mod-more js-get-mod-more-list transition" data-cur_page="1" data-last_dateline="1504655833">
-            点击加载更多
         </div>
     </div>
     <div class="wrap-right pull-right">
@@ -271,8 +235,17 @@
 </div>
 
 
-
-
+<%--<c:forEach var="tech" items="${techs}" >
+    <c:out value="${tech.dataTime}" /> <br>
+    <c:out value="${tech.indexTimeShow}"/> <br>
+    <c:out value="${tech.aId}" /> <br>
+    <c:out value="${tech.imgUrl}" /> <br>
+    <c:out value="${tech.author}" /> <br>
+    <c:out value="${tech.title}" /> <br>
+    <c:out value="${tech.type}" /> <br>
+    <c:out value="${tech.click}" /> <br><br><br>
+    <c:out value="${tech.context}" /> <br> <br>
+</c:forEach>--%>
 
 <%@include file="footer.jsp"%>
 
